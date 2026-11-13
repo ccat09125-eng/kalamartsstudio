@@ -1,0 +1,15 @@
+{
+  "name": "KALAM ARTS STUDIO",
+  "short_name": "KALAM ARTS",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfaf7",
+  "theme_color": "#fbfaf7",
+  "icons": [
+    {
+      "src": "/assets/images/kalam-arts-logo.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
