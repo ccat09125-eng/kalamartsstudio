@@ -111,13 +111,13 @@ Google Analytics, Search Console ownership verification, Google Business Profile
 
 ## GitHub and Netlify deployment
 
-This project is ready for Netlify static hosting. `netlify.toml` sets the publish directory to the repository root (`.`); no build command is required.
+This repository hosts the static website in `kalam-arts-studio-site/`. The `netlify.toml` at the repository root publishes that folder; no build command is required. Keep the base directory at the repository root so Netlify can discover the configuration.
 
-1. Create a new GitHub repository named `kalamartsstudio` under the intended studio account. For a public marketing website, Public is normally suitable; choose Private if you prefer to restrict source access.
-2. Upload the complete contents of this folder to the repository root (not an extra nested folder) and commit them to the `main` branch.
-3. In Netlify, choose **Add new project → Import an existing project → GitHub**, authorize Netlify, and select `kalamartsstudio`.
-4. Keep the build command empty and the publish directory as `.`. Netlify should also read these values from `netlify.toml`.
-5. Deploy and test the generated `*.netlify.app` URL on mobile and desktop. Then add `kalamartsstudio.com` under **Domain management** and follow the exact DNS records Netlify displays for that site.
+1. Keep `netlify.toml` at the repository root and the website files inside `kalam-arts-studio-site/`.
+2. Connect the GitHub repository to Netlify using the `main` branch.
+3. Leave the build command empty and use `kalam-arts-studio-site` as the publish directory, as configured in the root `netlify.toml`.
+4. Deploy and verify `/`, `/about.html`, and `/assets/css/style.css` on the generated `*.netlify.app` URL. Each page has its own HTML file, so no SPA catch-all redirect is needed; unknown URLs should return 404.
+5. Add `kalamartsstudio.com` under **Domain management** and follow the DNS records Netlify displays for that site.
 6. After DNS and HTTPS are active, verify the canonical domain, test all enquiry links, and submit `https://kalamartsstudio.com/sitemap.xml` in Google Search Console.
 
 The GitHub and Netlify accounts must be authorized by the site owner. Never put access tokens, passwords, or private API keys in this repository. Netlify hosting does not itself configure the domain registrar's DNS or create Google Search Console ownership.
